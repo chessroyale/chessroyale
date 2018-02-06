@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: 300px;
+	margin: auto;
+}
+
+#board {
+	width: 187.5px;
+	margin: auto;
+	padding-top: 3.75px;
+}
+
+.square {
+	height: 37.5px;
+	width: 37.5px;
+	display: inline-block;
+	background-color: lawngreen;
+	border: 1px solid green;
+}
+
+.line {
+	height: 37.5px;
+}
+
+#squareX1Y1,
+#squareX2Y1,
+#squareX4Y1,
+#squareX5Y1,
+#squareX1Y2,
+#squareX5Y2,
+#squareX1Y13,
+#squareX5Y13,
+#squareX1Y14,
+#squareX2Y14,
+#squareX4Y14,
+#squareX5Y14 {
+	visibility: hidden;
+}
+
+#squareX3Y1,
+#squareX2Y2,
+#squareX4Y2,
+#squareX2Y13,
+#squareX4Y13,
+#squareX3Y14 {
+	background-color: red;
+	border: 1px solid #cc0000;
+}
+
+#squareX3Y2,
+#squareX1Y3,
+#squareX2Y3,
+#squareX3Y3,
+#squareX4Y3,
+#squareX5Y3,
+#squareX1Y4,
+#squareX5Y4,
+#squareX1Y11,
+#squareX5Y11,
+#squareX1Y12,
+#squareX2Y12,
+#squareX3Y12,
+#squareX4Y12,
+#squareX5Y12,
+#squareX3Y13 {
+	background-color: yellow;
+	border: 1px solid #cc9900;
+}
+
+#squareX3Y6,
+#squareX2Y7,
+#squareX3Y7,
+#squareX4Y7,
+#squareX2Y8,
+#squareX3Y8,
+#squareX4Y8,
+#squareX3Y9 {
+	background-color: dodgerblue;
+	border: 1px solid mediumblue;
+}
+
+#clash {
+	width: 300px;
+	height: auto;
+	opacity: 0.5;
+	position: absolute;
+}
