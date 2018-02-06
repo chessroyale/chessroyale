@@ -5,26 +5,26 @@
 }
 
 #container {
-	width: 600px;
+	width: 900px;
 	margin: auto;
 }
 
 #board {
-	width: 375px;
+	width: 562.5px;
 	margin: auto;
-	padding-top: 7.5px;
+	padding-top: 11.25px;
 }
 
 .square {
-	height: 75px;
-	width: 75px;
+	height: 112.5px;
+	width: 112.5px;
 	display: inline-block;
 	background-color: lawngreen;
 	border: 1px solid green;
 }
 
 .line {
-	height: 75px;
+	height: 112.5px;
 }
 
 #squareX1Y1,
@@ -85,7 +85,7 @@
 }
 
 #clash {
-	width: 600px;
+	width: 900px;
 	height: auto;
 	opacity: 0.5;
 	position: absolute;
