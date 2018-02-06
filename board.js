@@ -3,9 +3,20 @@ $(document).ready(function() {
 		'id': 'container'
 	}).appendTo('body');
 	$('<div/>', {
+		'id': 'time',
+		'class': 'clock'
+	}).appendTo('#container');
+	$('<div/>', {
+		'id': 'score',
+		'class': 'scoreCard'
+	}).appendTo('#container');
+	$('<div/>', {
 		'id': 'board'
 	}).appendTo('#container');
-	
+	$('<div/>', {
+		'id': 'piecesCon',
+		'class': 'piecesCon'
+	}).appendTo('#container');
 	for(i=0; i < 14;i++){
 		$('<div/>', {
 				'id': 'line' + i,
