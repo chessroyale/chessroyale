@@ -128,29 +128,41 @@ $(document).ready(function() {
 	}
 
 	var pieces = [{"id": "wking",
-							"url": "img/pieces/wking.png"},
+							"url": "img/pieces/wking.png",
+							"class": "piece"},
 							{"id": "wqueen",
-							"url": "img/pieces/wqueen.png"},
+							"url": "img/pieces/wqueen.png",
+							"class": "piece"},
 							{"id": "whorse",
-							"url": "img/pieces/whorse.png"},
+							"url": "img/pieces/whorse.png",
+							"class": "piece"},
 							{"id": "wpawn",
-							"url": "img/pieces/wpawn.png"},
+							"url": "img/pieces/wpawn.png",
+							"class": "piece"},
 							{"id": "wbishop",
-							"url": "img/pieces/wbishop.png"},
+							"url": "img/pieces/wbishop.png",
+							"class": "piece"},
 							{"id": "wtower",
-							"url": "img/pieces/wtower.png"},
+							"url": "img/pieces/wtower.png",
+							"class": "piece"},
 							{"id": "bking",
-							"url": "img/pieces/bking.png"},
+							"url": "img/pieces/bking.png",
+							"class": "piece"},
 							{"id": "bqueen",
-							"url": "img/pieces/bqueen.png"},
+							"url": "img/pieces/bqueen.png",
+							"class": "piece"},
 							{"id": "bhorse",
-							"url": "img/pieces/bhorse.png"},
+							"url": "img/pieces/bhorse.png",
+							"class": "piece"},
 							{"id": "bpawn",
-							"url": "img/pieces/bpawn.png"},
+							"url": "img/pieces/bpawn.png",
+							"class": "piece"},
 							{"id": "bbishop",
-							"url": "img/pieces/bbishop.png"},
+							"url": "img/pieces/bbishop.png",
+							"class": "piece"},
 							{"id": "btower",
-							"url": "img/pieces/btower.png"}]
+							"url": "img/pieces/btower.png",
+							"class": "piece"}]
 
 	var initialPositions = ['#squareX3Y1',
 							'#squareX3Y3',
@@ -169,7 +181,9 @@ $(document).ready(function() {
 	for(i=0; i < pieces.length; i++) {
 		$('<img/>', {
 		'id': pieces[i].id,
-		'src': pieces[i].url
+		'src': pieces[i].url,
+		'class': pieces[i].class,
+		'data-piece': pieces[i].id
 		}).appendTo(initialPositions[i]);
 	}
 })
