@@ -13,34 +13,45 @@ $(document).ready(function(){
    		var selected = $(selectedAlpha)[0];
    		console.log(selected);
    		
+   		
+
+   		//Check if there is saved square
    		if (savedSquare == undefined) {
+   			//Check if there is piece in square
    			if ( $(selected).children().length == 0 ) {
-   				console.log('Seleccioná una pieza');
+   				alert('Seleccioná una pieza');
    			} else {
    				console.log('Tiene pieza');
    				if (savedPiece == undefined){
    					savedSquare = $(selected)[0];
    					savedPiece = $(selected).children()[0];
+   					$("*").removeClass('selected');
+   					$(selected).addClass('selected');
    					console.log(savedSquare);
    					console.log(savedPiece);
    				}
    			}
    		} else {
-   			if ($(selected) == savedSquare) {
-   				console.log('Estás marcando la misma casilla');
+   			
+   			//Check if the saved square and the clicked square are the same
+   			if (selected === savedSquare) {
+   				alert('Estás marcando la misma casilla');
    			} else {
-   				if ( $(selected).children().length > 0 ) {
-   				console.log('Tiene pieza');
-   				if (savedPiece == undefined){
-   					savedPiece = $(selected).children()[0];
-   					console.log(savedPiece);
+   				if ($(selected).children()[0] != undefined) {
+   					alert('Esa casilla ya está ocupada');
+   				} else {
+   					$(savedPiece).remove();
+   					$(savedPiece).appendTo($(selected));
+   					$(savedSquare).removeClass('selected');
+   					$(selected).addClass('selected');
+   					savedPiece = undefined;
+   					savedSquare = undefined;
    				}
-   			}
    			}
    			
    		}
 
-   		//Check if Have Piece
+   		
    		
 
 	});
