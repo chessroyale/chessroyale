@@ -26,7 +26,7 @@ $(document).ready(function(){
    						$(selected).children()[0].dataset.piece == "wbishop" ||
    						$(selected).children()[0].dataset.piece == "wqueen" ||
    						$(selected).children()[0].dataset.piece == "wking"  ){
-   				console.log('No puedes seleccionar pieza rival');
+   				alert('No puedes seleccionar pieza rival');
    			} else {
    				console.log('Tiene pieza');
    				if (savedPiece == undefined){
@@ -119,10 +119,6 @@ $(document).ready(function(){
    					var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
-   					var availiableMove18 = "#squareX" + (x * 1 + 3) + "Y" + (y - 3);
-   					var availiableMove24 = "#squareX" + (x - 3) + "Y" + (y * 1 - 3);
-   					var availiableMove22 = "#squareX" + (x - 3) + "Y" + (y * 1 + 3);
-   					var availiableMove20 = "#squareX" + (x * 1 + 3) + "Y" + (y * 1 + 3);
    					var availiableMove16 = "#squareX" + (x - 2) + "Y" + (y - 2);
    					var availiableMove13 = "#squareX" + (x * 1 + 2) + "Y" + (y - 2);
    					var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
@@ -135,10 +131,6 @@ $(document).ready(function(){
    					$(availiableMove14).addClass('availiable');
    					$(availiableMove15).addClass('availiable');
    					$(availiableMove16).addClass('availiable');
-   					$(availiableMove18).addClass('availiable');
-   					$(availiableMove20).addClass('availiable');
-   					$(availiableMove22).addClass('availiable');
-   					$(availiableMove24).addClass('availiable');
    					break;
    				case "bhorse":
 					var availiableMove2 = "#squareX" + (x - 1) + "Y" + (y - 2);
