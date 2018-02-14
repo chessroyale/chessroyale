@@ -26,7 +26,9 @@ $(document).ready(function() {
 		for(j=0; j < 5; j++) {
 			$('<div/>', {
 				'id': 'squareX' + (j + 1) + 'Y' + (i + 1),
-				'class': 'square'
+				'class': 'square',
+				'data-x': j + 1,
+				'data-y': i + 1
 			}).appendTo(lineId);
 			var squareId = '#squareX' + (j + 1) + 'Y' + (i + 1);
 		}
