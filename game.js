@@ -43,19 +43,29 @@ $(document).ready(function(){
    			//Check if the saved square and the clicked square are the same
    			if (selected === savedSquare) {
    				$("*").removeClass('selected');
-   				$("*").removeClass('availiable');
+   				$("*").removeClass('availiableMove');
    				$(savedSquare).removeClass('selected');
    				savedPiece = undefined;
    				savedSquare = undefined;
    			} else {
    				if ($(selected).children()[0] != undefined) {
-   					alert('Esa casilla ya está ocupada');
-   				} else if ($(selected).hasClass('availiable')){
+   					if ($(selected).children()[0].dataset.piece == "wpawn" ||
+   						$(selected).children()[0].dataset.piece == "whorse" ||
+   						$(selected).children()[0].dataset.piece == "wtower" ||
+   						$(selected).children()[0].dataset.piece == "wbishop" ||
+   						$(selected).children()[0].dataset.piece == "wqueen" ||
+   						$(selected).children()[0].dataset.piece == "wking"  ){
+   						//alert('Atacando!');
+   						attackingEnemy($(selected), savedPiece);
+   					} else {
+   						alert('Esa casilla ya está ocupada');
+   					}
+   				} else if ($(selected).hasClass('availiableMove')){
    					$(savedPiece).remove();
    					$(savedPiece).appendTo($(selected));
    					$(savedSquare).removeClass('selected');
-   					$(selected).addClass('selected');
-   					$("*").removeClass('availiable');
+   					//$(selected).addClass('selected');
+   					$("*").removeClass('availiableMove');
    					savedPiece = undefined;
    					savedSquare = undefined;
    				} else {
@@ -83,18 +93,6 @@ $(document).ready(function(){
    					var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
-   					$(availiableMove1).addClass('availiable');
-   					$(availiableMove2).addClass('availiable');
-   					$(availiableMove3).addClass('availiable');
-   					$(availiableMove4).addClass('availiable');
-   					$(availiableMove5).addClass('availiable');
-   					$(availiableMove6).addClass('availiable');
-   					$(availiableMove7).addClass('availiable');
-   					$(availiableMove8).addClass('availiable');
-   					$(availiableMove9).addClass('availiable');
-   					$(availiableMove10).addClass('availiable');
-   					$(availiableMove11).addClass('availiable');
-   					$(availiableMove12).addClass('availiable');
    					break;
    				case "btower":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
@@ -105,14 +103,6 @@ $(document).ready(function(){
    					var availiableMove12 = "#squareX" + (x - 2) + "Y" + y;
    					var availiableMove5 = "#squareX" + (x * 1 + 1) + "Y" + y;
    					var availiableMove10 = "#squareX" + (x * 1 + 2) + "Y" + y;
-   					$(availiableMove2).addClass('availiable');
-   					$(availiableMove4).addClass('availiable');
-   					$(availiableMove5).addClass('availiable');
-   					$(availiableMove7).addClass('availiable');
-   					$(availiableMove9).addClass('availiable');
-   					$(availiableMove10).addClass('availiable');
-   					$(availiableMove11).addClass('availiable');
-   					$(availiableMove12).addClass('availiable');
    					break;
    				case "bbishop":
    					var availiableMove1 = "#squareX" + (x - 1) + "Y" + (y - 1);
@@ -123,14 +113,6 @@ $(document).ready(function(){
    					var availiableMove13 = "#squareX" + (x * 1 + 2) + "Y" + (y - 2);
    					var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
    					var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
-   					$(availiableMove1).addClass('availiable');
-   					$(availiableMove3).addClass('availiable');
-   					$(availiableMove6).addClass('availiable');
-   					$(availiableMove8).addClass('availiable');
-   					$(availiableMove13).addClass('availiable');
-   					$(availiableMove14).addClass('availiable');
-   					$(availiableMove15).addClass('availiable');
-   					$(availiableMove16).addClass('availiable');
    					break;
    				case "bhorse":
 					var availiableMove2 = "#squareX" + (x - 1) + "Y" + (y - 2);
@@ -141,14 +123,6 @@ $(document).ready(function(){
    					var availiableMove3 = "#squareX" + (x * 1 + 2) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
-   					$(availiableMove1).addClass('availiable');
-   					$(availiableMove2).addClass('availiable');
-   					$(availiableMove3).addClass('availiable');
-   					$(availiableMove4).addClass('availiable');
-   					$(availiableMove5).addClass('availiable');
-   					$(availiableMove6).addClass('availiable');
-   					$(availiableMove7).addClass('availiable');
-   					$(availiableMove8).addClass('availiable');
    					break;
    				case "bqueen":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
@@ -163,42 +137,10 @@ $(document).ready(function(){
    					var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
-   					var availiableMove17 = "#squareX" + x + "Y" + (y - 3);
-   					var availiableMove18 = "#squareX" + (x * 1 + 3) + "Y" + (y - 3);
-   					var availiableMove21 = "#squareX" + x + "Y" + (y * 1 + 3);
-   					var availiableMove24 = "#squareX" + (x - 3) + "Y" + (y * 1 - 3);
-   					var availiableMove23 = "#squareX" + (x - 3) + "Y" + y;
-   					var availiableMove22 = "#squareX" + (x - 3) + "Y" + (y * 1 + 3);
-   					var availiableMove19 = "#squareX" + (x * 1 + 3) + "Y" + y;
-   					var availiableMove20 = "#squareX" + (x * 1 + 3) + "Y" + (y * 1 + 3);
    					var availiableMove16 = "#squareX" + (x - 2) + "Y" + (y - 2);
    					var availiableMove13 = "#squareX" + (x * 1 + 2) + "Y" + (y - 2);
    					var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
    					var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
-   					$(availiableMove1).addClass('availiable');
-   					$(availiableMove2).addClass('availiable');
-   					$(availiableMove3).addClass('availiable');
-   					$(availiableMove4).addClass('availiable');
-   					$(availiableMove5).addClass('availiable');
-   					$(availiableMove6).addClass('availiable');
-   					$(availiableMove7).addClass('availiable');
-   					$(availiableMove8).addClass('availiable');
-   					$(availiableMove9).addClass('availiable');
-   					$(availiableMove10).addClass('availiable');
-   					$(availiableMove11).addClass('availiable');
-   					$(availiableMove12).addClass('availiable');
-   					$(availiableMove13).addClass('availiable');
-   					$(availiableMove14).addClass('availiable');
-   					$(availiableMove15).addClass('availiable');
-   					$(availiableMove16).addClass('availiable');
-   					$(availiableMove17).addClass('availiable');
-   					$(availiableMove18).addClass('availiable');
-   					$(availiableMove19).addClass('availiable');
-   					$(availiableMove20).addClass('availiable');
-   					$(availiableMove21).addClass('availiable');
-   					$(availiableMove22).addClass('availiable');
-   					$(availiableMove23).addClass('availiable');
-   					$(availiableMove24).addClass('availiable');
    					break;
    				case "bking":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
@@ -209,24 +151,76 @@ $(document).ready(function(){
    					var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
-   					$(availiableMove1).addClass('availiable');
-   					$(availiableMove2).addClass('availiable');
-   					$(availiableMove3).addClass('availiable');
-   					$(availiableMove4).addClass('availiable');
-   					$(availiableMove5).addClass('availiable');
-   					$(availiableMove6).addClass('availiable');
-   					$(availiableMove7).addClass('availiable');
-   					$(availiableMove8).addClass('availiable');
    					break;
    				default:
    					console.log('error');
    				;
    			}
+
+   			$(availiableMove1).addClass('availiableMove availiableAttack');
+   			$(availiableMove2).addClass('availiableMove availiableAttack');
+   			$(availiableMove3).addClass('availiableMove availiableAttack');
+   			$(availiableMove4).addClass('availiableMove availiableAttack');
+   			$(availiableMove5).addClass('availiableMove availiableAttack');
+   			$(availiableMove6).addClass('availiableMove availiableAttack');
+   			$(availiableMove7).addClass('availiableMove availiableAttack');
+   			$(availiableMove8).addClass('availiableMove availiableAttack');
+   			$(availiableMove9).addClass('availiableMove availiableAttack');
+   			$(availiableMove10).addClass('availiableMove availiableAttack');
+   			$(availiableMove11).addClass('availiableMove availiableAttack');
+   			$(availiableMove12).addClass('availiableMove availiableAttack');
+   			$(availiableMove13).addClass('availiableMove availiableAttack');
+   			$(availiableMove14).addClass('availiableMove availiableAttack');
+   			$(availiableMove15).addClass('availiableMove availiableAttack');
+   			$(availiableMove16).addClass('availiableMove availiableAttack');
+
+   			for(i=0; i < 14;i++){
+				for(j=0; j < 5; j++) {
+					var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
+	   			if ($(id).children()[0] != undefined){
+   					$(id).removeClass('availiableMove');
+   					}
+   				}
+   			}
    		};
 
 
+   		function attackingEnemy(enemy, savedPiece){
+   			if (enemy.hasClass('availiableAttack')) {
+   				console.log('Atacando!');
 
-   		
+   				var enemyPiece = enemy[0].children[0];
+
+   				var life = enemyPiece.dataset.life;
+   				console.log(life);
+   				var attack = savedPiece.dataset.attack;
+   				console.log(attack);
+
+   				var newLife = life - attack;
+   				var newLifePerc = (newLife * 100)/
+   				var barDecrease = newLifePerc * 1.15;
+   				var newBarValue = newLife - barDecrease;
+
+   				$(enemyPiece).attr('data-life', newLife);
+
+   				$(enemyPiece.children[0]).css('width', newBarValue);
+
+   				var newLifeBar = $(enemyPiece.children[0]).css('width');
+   				var midLife = 60*1.15;
+   				var lowLife = 30*1.15;
+   				if (newLifeBar < midLife) {
+   					$(enemyPiece.children[0]).css('background-color', 'yellow');
+   				} else if (newLifeBar < lowLife) {
+   					$(enemyPiece.children[0]).css('background-color', 'red');
+   				}
+
+
+   				if (enemyPiece.dataset.life <= 0) {
+   					$(enemy[0]).empty();
+   				}
+   			}
+   		};
+
 
 	});
 

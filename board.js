@@ -131,40 +131,64 @@ $(document).ready(function() {
 
 	var pieces = [{"id": "wking",
 							"url": "img/pieces/wking.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 60,
+							"attack": 20},
 							{"id": "wqueen",
 							"url": "img/pieces/wqueen.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 50,
+							"attack": 7},
 							{"id": "whorse",
 							"url": "img/pieces/whorse.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 30,
+							"attack": 10},
 							{"id": "wpawn",
 							"url": "img/pieces/wpawn.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 15,
+							"attack": 5},
 							{"id": "wbishop",
 							"url": "img/pieces/wbishop.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 20,
+							"attack": 15},
 							{"id": "wtower",
 							"url": "img/pieces/wtower.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 40,
+							"attack": 10},
 							{"id": "bking",
 							"url": "img/pieces/bking.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 60,
+							"attack": 20},
 							{"id": "bqueen",
 							"url": "img/pieces/bqueen.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 50,
+							"attack": 7},
 							{"id": "bhorse",
 							"url": "img/pieces/bhorse.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 30,
+							"attack": 10},
 							{"id": "bpawn",
 							"url": "img/pieces/bpawn.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 15,
+							"attack": 5},
 							{"id": "bbishop",
 							"url": "img/pieces/bbishop.png",
-							"class": "piece"},
+							"class": "piece",
+							"life": 20,
+							"attack": 15},
 							{"id": "btower",
 							"url": "img/pieces/btower.png",
-							"class": "piece"}]
+							"class": "piece",
+							"life": 40,
+							"attack": 10}]
 
 	var initialPositions = ['#squareX3Y1',
 							'#squareX3Y3',
@@ -181,11 +205,25 @@ $(document).ready(function() {
 
 
 	for(i=0; i < pieces.length; i++) {
-		$('<img/>', {
+		$('<div/>', {
 		'id': pieces[i].id,
-		'src': pieces[i].url,
+		'style': 'background-image: url(' + pieces[i].url + ')',
 		'class': pieces[i].class,
-		'data-piece': pieces[i].id
+		'data-piece': pieces[i].id,
+		'data-life': pieces[i].life,
+		'data-attack': pieces[i].attack
 		}).appendTo(initialPositions[i]);
 	}
-})
+
+	for(i=0; i < 14;i++){
+		for(j=0; j < 5; j++) {
+			var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
+			if ($(id).children()[0] != undefined){
+   					$('<div/>', {
+					'id': "lifebar" + $(id).children()[0].dataset.piece,
+					'class': 'lifebar'
+					}).appendTo($(id).children()[0]);
+			}
+		}
+	}
+});
