@@ -197,7 +197,7 @@ $(document).ready(function(){
    				console.log(attack);
 
    				var newLife = life - attack;
-   				var newLifePerc = (newLife * 100)/
+   				//var newLifePerc = (newLife * 100)/
    				var barDecrease = newLifePerc * 1.15;
    				var newBarValue = newLife - barDecrease;
 
