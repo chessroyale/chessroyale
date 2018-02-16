@@ -198,12 +198,12 @@ $(document).ready(function(){
 
    				var newLife = life - attack;
    				//var newLifePerc = (newLife * 100)/
-   				var barDecrease = newLifePerc * 1.15;
-   				var newBarValue = newLife - barDecrease;
+   				//var barDecrease = newLifePerc * 1.15;
+   				//var newBarValue = newLife - barDecrease;
 
    				$(enemyPiece).attr('data-life', newLife);
 
-   				$(enemyPiece.children[0]).css('width', newBarValue);
+   				/*$(enemyPiece.children[0]).css('width', newBarValue);
 
    				var newLifeBar = $(enemyPiece.children[0]).css('width');
    				var midLife = 60*1.15;
@@ -212,7 +212,7 @@ $(document).ready(function(){
    					$(enemyPiece.children[0]).css('background-color', 'yellow');
    				} else if (newLifeBar < lowLife) {
    					$(enemyPiece.children[0]).css('background-color', 'red');
-   				}
+   				}*/
 
 
    				if (enemyPiece.dataset.life <= 0) {
