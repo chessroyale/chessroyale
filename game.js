@@ -80,7 +80,7 @@ $(document).ready(function(){
    			var y = savedSquare.dataset.y;
 
    			switch(savedPiece.dataset.piece) {
-   				case "bpawn": 
+   				case "ppawn": 
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
    					var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
    					var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -94,7 +94,7 @@ $(document).ready(function(){
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
    					break;
-   				case "btower":
+   				case "ptower":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
    					var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
    					var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -104,7 +104,7 @@ $(document).ready(function(){
    					var availiableMove5 = "#squareX" + (x * 1 + 1) + "Y" + y;
    					var availiableMove10 = "#squareX" + (x * 1 + 2) + "Y" + y;
    					break;
-   				case "bbishop":
+   				case "pbishop":
    					var availiableMove1 = "#squareX" + (x - 1) + "Y" + (y - 1);
    					var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
    					var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
@@ -114,7 +114,7 @@ $(document).ready(function(){
    					var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
    					var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
    					break;
-   				case "bhorse":
+   				case "phorse":
 					var availiableMove2 = "#squareX" + (x - 1) + "Y" + (y - 2);
    					var availiableMove7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
    					var availiableMove4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
@@ -124,7 +124,7 @@ $(document).ready(function(){
    					var availiableMove6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
    					var availiableMove8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
    					break;
-   				case "bqueen":
+   				case "pqueen":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
    					var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
    					var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -142,7 +142,7 @@ $(document).ready(function(){
    					var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
    					var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
    					break;
-   				case "bking":
+   				case "pking":
    					var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
    					var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
    					var availiableMove4 = "#squareX" + (x - 1) + "Y" + y;
@@ -195,24 +195,23 @@ $(document).ready(function(){
    				console.log(life);
    				var attack = savedPiece.dataset.attack;
    				console.log(attack);
+   				var damage = savedPiece.dataset.damage;
+   				console.log(damage);
 
    				var newLife = life - attack;
-   				//var newLifePerc = (newLife * 100)/
-   				//var barDecrease = newLifePerc * 1.15;
-   				//var newBarValue = newLife - barDecrease;
-
+   				var newBarValue = (newLife * 112)/damage;
+   				
    				$(enemyPiece).attr('data-life', newLife);
 
-   				/*$(enemyPiece.children[0]).css('width', newBarValue);
+   				$(enemyPiece.children[1]).css('width', newBarValue);
 
-   				var newLifeBar = $(enemyPiece.children[0]).css('width');
-   				var midLife = 60*1.15;
-   				var lowLife = 30*1.15;
-   				if (newLifeBar < midLife) {
-   					$(enemyPiece.children[0]).css('background-color', 'yellow');
-   				} else if (newLifeBar < lowLife) {
-   					$(enemyPiece.children[0]).css('background-color', 'red');
-   				}*/
+   				var midLife = 60*1.12;
+   				var lowLife = 30*1.12;
+   				if (newBarValue < lowLife) {
+   					$(enemyPiece.children[1]).css('background-color', 'red');
+   				} else if (newBarValue < midLife) {
+   					$(enemyPiece.children[1]).css('background-color', 'yellow');
+   				}
 
 
    				if (enemyPiece.dataset.life <= 0) {
