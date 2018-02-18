@@ -49,12 +49,12 @@ $(document).ready(function(){
    				savedSquare = undefined;
    			} else {
    				if ($(selected).children()[0] != undefined) {
-   					if ($(selected).children()[0].dataset.piece == "wpawn" ||
-   						$(selected).children()[0].dataset.piece == "whorse" ||
-   						$(selected).children()[0].dataset.piece == "wtower" ||
-   						$(selected).children()[0].dataset.piece == "wbishop" ||
-   						$(selected).children()[0].dataset.piece == "wqueen" ||
-   						$(selected).children()[0].dataset.piece == "wking"  ){
+   					if ($(selected).children()[0].dataset.piece == "opawn" ||
+   						$(selected).children()[0].dataset.piece == "ohorse" ||
+   						$(selected).children()[0].dataset.piece == "otower" ||
+   						$(selected).children()[0].dataset.piece == "obishop" ||
+   						$(selected).children()[0].dataset.piece == "oqueen" ||
+   						$(selected).children()[0].dataset.piece == "oking"  ){
    						//alert('Atacando!');
    						attackingEnemy($(selected), savedPiece);
    					} else {
