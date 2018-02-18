@@ -79,6 +79,10 @@
 	width: 111px;
 }
 
+.pieceimg {
+	position: absolute;
+}
+
 .selected {
 	box-shadow: 
 			inset 0 12px 2px rgba(0,0,0,.1),
@@ -106,9 +110,46 @@
 
 .lifebar {
 	height: 10px;
-	width: 115px;
+	width: 112px;
 	position: absolute;
 	margin-top: 101px;
    	z-index: 1000;
 	background-color: green;
+}
+
+
+/*---------------------------
+
+			Pieces
+
+----------------------------*/
+
+#okingimg, #pkingimg {
+	margin-top: -87px;
+	margin-left: 17px;
+}
+
+#oqueenimg, #pqueenimg {
+	margin-top: -75px;
+	margin-left: 15px;
+}
+
+#otowerimg, #ptowerimg {
+	margin-top: -45px;
+	margin-left: 20px;
+}
+
+#obishopimg, #pbishopimg {
+	margin-top: -55px;
+	margin-left: 20px;
+}
+
+#ohorseimg, #phorseimg {
+	margin-top: -35px;
+	margin-left: 18px;
+}
+
+#opawnimg, #ppawnimg {
+	margin-top: -15px;
+	margin-left: 23px;
 }
