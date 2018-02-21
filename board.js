@@ -1,7 +1,5 @@
-$(document).ready(function() {
-	$('<div/>', {
-		'id': 'container'
-	}).appendTo('body');
+function drawBoard(){
+	
 	$('<div/>', {
 		'id': 'time',
 		'class': 'clock'
@@ -207,7 +205,6 @@ $(document).ready(function() {
 	for(i=0; i < pieces.length; i++) {
 		$('<div/>', {
 		'id': pieces[i].id,
-		//'style': 'background-image: url(' + pieces[i].url + ')',
 		'class': pieces[i].class,
 		'data-piece': pieces[i].id,
 		'data-life': pieces[i].life,
@@ -232,4 +229,4 @@ $(document).ready(function() {
 			}
 		}
 	}
-});
+};
