@@ -2,7 +2,7 @@
 	//$('.square').on('click', function(){
 	//	console.log($('.square').attr('id'));
 	//})
-
+function playGame(){
 	var savedSquare;
 	var savedPiece;
 
@@ -44,6 +44,7 @@
    			if (selected === savedSquare) {
    				$("*").removeClass('selected');
    				$("*").removeClass('availiableMove');
+               $("*").removeClass('availiableAttack');
    				$(savedSquare).removeClass('selected');
    				savedPiece = undefined;
    				savedSquare = undefined;
@@ -66,6 +67,7 @@
    					$(savedSquare).removeClass('selected');
    					//$(selected).addClass('selected');
    					$("*").removeClass('availiableMove');
+                  $("*").removeClass('availiableAttack');
    					savedPiece = undefined;
    					savedSquare = undefined;
    				} else {
@@ -83,5 +85,5 @@
 
 	});
 
-
+};
 //});
