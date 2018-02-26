@@ -10,14 +10,27 @@ $(document).ready(function(){
 	}).appendTo('#container');
 
 	$('<button/>', {
+		'id': 'howto',
+		'type': 'button',
+		'class': 'button',
+		'text': 'Cómo se juega'
+	}).appendTo('#container');
+
+	$('<button/>', {
 		'id': 'launcher',
 		'type': 'button',
 		'class': 'button',
-		'text': 'Launch game'
-	}).appendTo('#container')
+		'text': 'Jugar'
+	}).appendTo('#container');
+
+	$('#howto').on('click', function(){
+		$('#launcher').fadeOut('fast');
+		tutorial();
+	});
 
 	$('#launcher').on('click', function(){
 		$('#logo').fadeOut('slow');
+		$('#howto').fadeOut('slow');
 		$('#launcher').fadeOut('slow', function(){
 			choosePieces();
 		});

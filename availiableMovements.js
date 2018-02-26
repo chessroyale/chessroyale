@@ -192,14 +192,10 @@
                case "phorse":
                   switch(savedPiece.dataset.type) {
                      case "melee":
-                        var availiableAttack2 = "#squareX" + (x - 1) + "Y" + (y - 2);
-                        var availiableAttack7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
-                        var availiableAttack4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack5 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack1 = "#squareX" + (x - 2) + "Y" + (y - 1);
-                        var availiableAttack3 = "#squareX" + (x * 1 + 2) + "Y" + (y - 1);
-                        var availiableAttack6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
-                        var availiableAttack8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
+                        var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
+                        var availiableAttack7 = "#squareX" + x + "Y" + (y * 1 + 1);
+                        var availiableAttack4 = "#squareX" + (x - 1) + "Y" + y;
+                        var availiableAttack5 = "#squareX" + (x * 1 + 1) + "Y" + y;
                         break;
                      case "ranged":
                         var availiableAttack2 = "#squareX" + (x - 1) + "Y" + (y - 2);
@@ -212,14 +208,18 @@
                         var availiableAttack8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
                         break;
                      case "magic":
-                        var availiableAttack2 = "#squareX" + (x - 1) + "Y" + (y - 2);
-                        var availiableAttack7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
-                        var availiableAttack4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack5 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack1 = "#squareX" + (x - 2) + "Y" + (y - 1);
-                        var availiableAttack3 = "#squareX" + (x * 1 + 2) + "Y" + (y - 1);
-                        var availiableAttack6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
-                        var availiableAttack8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
+                        var availiableAttack1 = "#squareX" + (x - 1) + "Y" + (y - 2);
+                        var availiableAttack2 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
+                        var availiableAttack3 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
+                        var availiableAttack4 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
+                        var availiableAttack5 = "#squareX" + (x - 1) + "Y" + (y - 2);
+                        var availiableAttack6 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
+                        var availiableAttack7 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
+                        var availiableAttack8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
+                        var availiableAttack9 = "#squareX" + (x - 2) + "Y" + (y - 1);
+                        var availiableAttack10 = "#squareX" + (x * 1 + 2) + "Y" + (y - 1);
+                        var availiableAttack11 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
+                        var availiableAttack12 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
                         break;
                      default:
                         console.log("error");

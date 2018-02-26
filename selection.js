@@ -14,7 +14,7 @@ var pawnAttack;
 function choosePieces(){
 	$('<h1/>', {
 		'class': 'title',
-		'text': 'Choose your pieces'
+		'text': 'Elegí tus tropas'
 	}).appendTo('#container');
 
 	$('<p/>', {
@@ -26,13 +26,13 @@ function choosePieces(){
 	$('<p/>', {
 		'id': 'secondOption',
 		'class': 'classOption',
-		'text': 'Ranged'
+		'text': 'A distancia'
 	}).appendTo('#container');
 
 	$('<p/>', {
 		'id': 'thirdOption',
 		'class': 'classOption',
-		'text': 'Magic'
+		'text': 'Mágico'
 	}).appendTo('#container');
 
 	var pieces = [
@@ -227,7 +227,7 @@ function choosePieces(){
 		'id': 'selectionDone',
 		'type': 'button',
 		'class': 'button',
-		'text': "Let's play"
+		'text': "¡Todo listo!"
 	}).appendTo('#container')
 
 	$('#selectionDone').on('click', function(){

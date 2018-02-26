@@ -44,7 +44,7 @@ function playGame(){
    			if (selected === savedSquare) {
    				$("*").removeClass('selected');
    				$("*").removeClass('availiableMove');
-               $("*").removeClass('availiableAttack');
+               	$("*").removeClass('availiableAttack');
    				$(savedSquare).removeClass('selected');
    				savedPiece = undefined;
    				savedSquare = undefined;
@@ -59,7 +59,16 @@ function playGame(){
    						//alert('Atacando!');
    						attackingEnemy($(selected), savedPiece);
    					} else {
-   						alert('Esa casilla ya está ocupada');
+   						//alert('Esa casilla ya está ocupada');
+   						savedSquare = $(selected)[0];
+	   					savedPiece = $(selected).children()[0];
+	   					$("*").removeClass('selected');
+	   					$("*").removeClass('availiableMove');
+               			$("*").removeClass('availiableAttack');
+	   					$(selected).addClass('selected');
+	   					availiableMovements(savedSquare, savedPiece);
+	   					console.log(savedSquare);
+	   					console.log(savedPiece);
    					}
    				} else if ($(selected).hasClass('availiableMove')){
    					$(savedPiece).remove();
@@ -67,7 +76,7 @@ function playGame(){
    					$(savedSquare).removeClass('selected');
    					//$(selected).addClass('selected');
    					$("*").removeClass('availiableMove');
-                  $("*").removeClass('availiableAttack');
+                  	$("*").removeClass('availiableAttack');
    					savedPiece = undefined;
    					savedSquare = undefined;
    				} else {
