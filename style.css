@@ -112,20 +112,19 @@
 
 
 #board {
-	width: 500px;
+	width: 540px;
 	margin: auto;
-	padding-top: 130px;
-	padding-bottom: 50px;
+	padding-top: 40px;
 }
 
 .square {
-	height: 100px;
-	width: 100px;
+	height: 108px;
+	width: 108px;
 	display: inline-block;	
 }
 
 .line {
-	height: 100px;
+	height: 108px;
 }
 
 .hidden {
@@ -162,10 +161,10 @@
 
 .clock, .scoreCard {
 	height: 90px;
-	width: 270px;
+	width: 160px;
 	margin-top: 10px;
 	position: absolute;
-	background-color: purple;
+	background-color: #776853;
 	box-shadow: 
 			0 12px 2px rgba(0,0,0,.1),
             0 0 10px rgba(0,0,0,.1),
@@ -186,11 +185,10 @@
 	display: inline-block;
 	font-weight: bold;
 	text-align: center;
-	font-size: 60px;
+	font-size: 50px;
 }
 
 #time > div {
-	padding: 10px;
 	border-radius: 3px;
 	display: inline-block;
 }
@@ -205,11 +203,11 @@
 }
 
 .colon {
-	padding-right: 15px;
+	padding: 15px;
 }
 
 .scoreCard {
-	margin-left: 620px;
+	margin-left: 730px;
 }
 
 .piece {
@@ -274,8 +272,8 @@
 
 .attackType {
 	position: absolute;
-	margin-left: 50px;
+	margin-left: 43px;
    	z-index: 1000;
-   	height: 50px;
-   	width: 50px;
+   	height: 60px;
+   	width: 60px;
 }
