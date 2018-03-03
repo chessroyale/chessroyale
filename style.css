@@ -71,23 +71,24 @@
 	font-weight: bold;
 }
 
-#firstOption {
-	padding-left: 220px;
+#firstOption, #benchFirstOption {
+	padding-left: 200px;
 }
 
-#secondOption {
+#secondOption, #benchSecondOption {
 	padding-left: 70px;
 }
 
-#thirdOption {
+#thirdOption, #benchThirdOption {
 	padding-left: 50px;
 }
 
 .pieceType {
-	height: 170px;
-	width: 600px;
-	margin: auto;
-	margin-top:20px;
+	height: 100px;
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #pieceLine0 {	
@@ -95,16 +96,8 @@
 }
 
 .selectionPiece {
-	padding-left: 82px;
+	padding-left: 62px;
 	padding-right: 26px;
-}
-
-#piece20 {
-	padding-left: 90px;
-}
-
-#piece50 {
-	padding-left: 95px;
 }
 
 #selectionDone {
@@ -159,6 +152,14 @@
 	border: 0.5px solid mediumblue;
 }
 
+.prison {
+	background-image: url("img/squares/blacksquare.jpg");
+}
+
+.bench {
+	background-image: url("img/squares/whitesquare.jpg");
+}
+
 .clock, .scoreCard {
 	height: 90px;
 	width: 270px;
@@ -179,6 +180,34 @@
 	margin-left: 10px;
 }
 
+#time{
+	font-family: 'Macondo', cursive;
+	color: #fafafa;
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	font-size: 60px;
+}
+
+#time > div {
+	padding: 10px;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+#time div > span {
+	border-radius: 3px;
+	display: inline-block;
+}
+
+.seconds {
+	color: red;
+}
+
+.colon {
+	padding-right: 15px;
+}
+
 .scoreCard {
 	margin-left: 620px;
 }
@@ -190,6 +219,10 @@
 
 .pieceimg {
 	position: absolute;
+}
+
+.bench {
+	opacity: 0.8;
 }
 
 .selected {
@@ -220,6 +253,7 @@
 .availiableAttack {
 	/*box-shadow: 
 			inset 0 24px 4px rgba(102,51,153,.1),
+ 
             inset 0 0 20px rgba(102,51,153,.1),
             inset 0 4px 12px rgba(102,51,153,.3),
             inset 0 12px 40px rgba(102,51,153,.2),
@@ -238,39 +272,10 @@
 	background-color: green;
 }
 
-
-/*---------------------------
-
-			Pieces
-
-----------------------------*/
-
-#okingimg, #pkingimg {
-	margin-top: -84px;
-	margin-left: 11px;
-}
-
-#oqueenimg, #pqueenimg {
-	margin-top: -73px;
-	margin-left: 9px;
-}
-
-#otowerimg, #ptowerimg {
-	margin-top: -49px;
-	margin-left: 14px;
-}
-
-#obishopimg, #pbishopimg {
-	margin-top: -53px;
-	margin-left: 14px;
-}
-
-#ohorseimg, #phorseimg {
-	margin-top: -33px;
-	margin-left: 12px;
-}
-
-#opawnimg, #ppawnimg {
-	margin-top: -13px;
-	margin-left: 17px;
+.attackType {
+	position: absolute;
+	margin-left: 50px;
+   	z-index: 1000;
+   	height: 50px;
+   	width: 50px;
 }

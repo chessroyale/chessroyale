@@ -17,7 +17,7 @@
                   var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
                   var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
                   break;
-               case "ptower":
+               case "pchampion":
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -27,7 +27,7 @@
                   var availiableMove5 = "#squareX" + (x * 1 + 1) + "Y" + y;
                   var availiableMove10 = "#squareX" + (x * 1 + 2) + "Y" + y;
                   break;
-               case "pbishop":
+               case "pspy":
                   var availiableMove1 = "#squareX" + (x - 1) + "Y" + (y - 1);
                   var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
                   var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
@@ -37,7 +37,7 @@
                   var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
                   var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
                   break;
-               case "phorse":
+               case "pmage":
                   var availiableMove2 = "#squareX" + (x - 1) + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
                   var availiableMove4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
@@ -47,7 +47,7 @@
                   var availiableMove6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
                   var availiableMove8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
                   break;
-               case "pqueen":
+               case "pgral":
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -96,6 +96,16 @@
             $(availiableMove15).addClass('availiableMove');
             $(availiableMove16).addClass('availiableMove');
 
+            for(i=0; i < 14;i++){
+               for(j=0; j < 5; j++) {
+                  var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
+                  if ($(id).hasClass('bench') || 
+                     $(id).hasClass('prison')){
+                     $(id).removeClass('availiableMove');
+                  }
+               }
+            }
+
             switch(savedPiece.dataset.piece) {
                case "ppawn": 
                   switch(savedPiece.dataset.type) {
@@ -133,21 +143,24 @@
                         console.log("error");     
                   }
                   break;
-               case "ptower":
+               case "pchampion":
                   switch(savedPiece.dataset.type) {
                      case "melee":
+                     case "meleeBench":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
                         var availiableAttack7 = "#squareX" + x + "Y" + (y * 1 + 1);
                         var availiableAttack4 = "#squareX" + (x - 1) + "Y" + y;
                         var availiableAttack5 = "#squareX" + (x * 1 + 1) + "Y" + y;
                         break;
                      case "ranged":
+                     case "rangedBench":
                         var availiableAttack9 = "#squareX" + x + "Y" + (y - 2);
                         var availiableAttack11 = "#squareX" + x + "Y" + (y * 1 + 2);
                         var availiableAttack12 = "#squareX" + (x - 2) + "Y" + y;
                         var availiableAttack10 = "#squareX" + (x * 1 + 2) + "Y" + y;
                         break;
                      case "magic":
+                     case "magicBench":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
                         var availiableAttack9 = "#squareX" + x + "Y" + (y - 2);
                         var availiableAttack7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -161,21 +174,24 @@
                         console.log("error");
                   }
                   break;
-               case "pbishop":
+               case "pspy":
                   switch(savedPiece.dataset.type) {
                      case "melee":
+                     case "meleeBench":
                         var availiableAttack1 = "#squareX" + (x - 1) + "Y" + (y - 1);
                         var availiableAttack3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
                         var availiableAttack6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
                         var availiableAttack8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
                         break;
                      case "ranged":
+                     case "rangedBench":
                         var availiableAttack16 = "#squareX" + (x - 2) + "Y" + (y - 2);
                         var availiableAttack13 = "#squareX" + (x * 1 + 2) + "Y" + (y - 2);
                         var availiableAttack15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
                         var availiableAttack14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
                         break;
                      case "magic":
+                     case "magicBench":
                         var availiableAttack1 = "#squareX" + (x - 1) + "Y" + (y - 1);
                         var availiableAttack3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
                         var availiableAttack6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
@@ -189,15 +205,17 @@
                         console.log("error");
                   }     
                   break;           
-               case "phorse":
+               case "pmage":
                   switch(savedPiece.dataset.type) {
                      case "melee":
+                     case "meleeBench":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
                         var availiableAttack7 = "#squareX" + x + "Y" + (y * 1 + 1);
                         var availiableAttack4 = "#squareX" + (x - 1) + "Y" + y;
                         var availiableAttack5 = "#squareX" + (x * 1 + 1) + "Y" + y;
                         break;
                      case "ranged":
+                     case "rangedBench":
                         var availiableAttack2 = "#squareX" + (x - 1) + "Y" + (y - 2);
                         var availiableAttack7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
                         var availiableAttack4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
@@ -208,6 +226,7 @@
                         var availiableAttack8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
                         break;
                      case "magic":
+                     case "magicBench":
                         var availiableAttack1 = "#squareX" + (x - 1) + "Y" + (y - 2);
                         var availiableAttack2 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
                         var availiableAttack3 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
@@ -225,7 +244,7 @@
                         console.log("error");
                   }
                   break;
-               case "pqueen":
+               case "pgral":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
@@ -339,11 +358,13 @@
                   var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
                   if ($(id).children()[0] == undefined  || 
                      $(id).children()[0].dataset.piece == "ppawn" ||
-                     $(id).children()[0].dataset.piece == "phorse" ||
-                     $(id).children()[0].dataset.piece == "ptower" ||
-                     $(id).children()[0].dataset.piece == "pbishop" ||
-                     $(id).children()[0].dataset.piece == "pqueen" ||
-                     $(id).children()[0].dataset.piece == "pking"){
+                     $(id).children()[0].dataset.piece == "pmage" ||
+                     $(id).children()[0].dataset.piece == "pchampion" ||
+                     $(id).children()[0].dataset.piece == "pspy" ||
+                     $(id).children()[0].dataset.piece == "pgral" ||
+                     $(id).children()[0].dataset.piece == "pking" ||
+                     $(id).hasClass('bench') || 
+                     $(id).hasClass('prison')){
                      $(id).removeClass('availiableAttack');
                   }
                }

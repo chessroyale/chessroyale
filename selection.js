@@ -1,14 +1,14 @@
 var kingType;
-var queenType;
-var bishopType;
-var horseType;
-var towerType;
+var gralType;
+var spyType;
+var mageType;
+var championType;
 var pawnType;
 var kingAttack;
-var queenAttack;
-var bishopAttack;
-var horseAttack;
-var towerAttack;
+var gralAttack;
+var spyAttack;
+var mageAttack;
+var championAttack;
 var pawnAttack;
 
 function choosePieces(){
@@ -48,52 +48,52 @@ function choosePieces(){
 					"piece": "king",
 					"attack": 8,
 					"type": "magic"}],
-					[{"url": "img/pieces/pqueen.png",
-					"piece": "queen",
+					[{"url": "img/pieces/pgral.png",
+					"piece": "gral",
 					"attack": 7,
 					"type": "melee"},
-					{"url": "img/pieces/pqueen.png",
-					"piece": "queen",
+					{"url": "img/pieces/pgral.png",
+					"piece": "gral",
 					"attack": 5,
 					"type": "ranged"},
-					{"url": "img/pieces/pqueen.png",
-					"piece": "queen",
+					{"url": "img/pieces/pgral.png",
+					"piece": "gral",
 					"attack": 3,
 					"type": "magic"}],
-					[{"url": "img/pieces/pbishop.png",
-					"piece": "bishop",
+					[{"url": "img/pieces/pspy.png",
+					"piece": "spy",
 					"attack": 15,
 					"type": "melee"},
-					{"url": "img/pieces/pbishop.png",
-					"piece": "bishop",
+					{"url": "img/pieces/pspy.png",
+					"piece": "spy",
 					"attack": 11,
 					"type": "ranged"},
-					{"url": "img/pieces/pbishop.png",
-					"piece": "bishop",
+					{"url": "img/pieces/pspy.png",
+					"piece": "spy",
 					"attack": 6,
 					"type": "magic"}],
-					[{"url": "img/pieces/phorse.png",
-					"piece": "horse",
+					[{"url": "img/pieces/pmage.png",
+					"piece": "mage",
 					"attack": 10,
 					"type": "melee"},
-					{"url": "img/pieces/phorse.png",
-					"piece": "horse",
+					{"url": "img/pieces/pmage.png",
+					"piece": "mage",
 					"attack": 7,
 					"type": "ranged"},
-					{"url": "img/pieces/phorse.png",
-					"piece": "horse",
+					{"url": "img/pieces/pmage.png",
+					"piece": "mage",
 					"attack": 4,
 					"type": "magic"}],
-					[{"url": "img/pieces/ptower.png",
-					"piece": "tower",
+					[{"url": "img/pieces/pchampion.png",
+					"piece": "champion",
 					"attack": 10,
 					"type": "melee"},
-					{"url": "img/pieces/ptower.png",
-					"piece": "tower",
+					{"url": "img/pieces/pchampion.png",
+					"piece": "champion",
 					"attack": 7,
 					"type": "ranged"},
-					{"url": "img/pieces/ptower.png",
-					"piece": "tower",
+					{"url": "img/pieces/pchampion.png",
+					"piece": "champion",
 					"attack": 4,
 					"type": "magic"}],
 					[{"url": "img/pieces/ppawn.png",
@@ -151,46 +151,46 @@ function choosePieces(){
    					alert("Ya seleccionaste un tipo de Rey");
    				}
    				break;
-   			case "queen":
-   				if (queenType == undefined) {
-   					queenType = selected.dataset.type;
-   					queenAttack = selected.dataset.attack;
+   			case "gral":
+   				if (gralType == undefined) {
+   					gralType = selected.dataset.type;
+   					gralAttack = selected.dataset.attack;
    					$(selected).attr('src', 'img/pieces/o' + selected.dataset.piece + '.png');
    					$(selected).addClass('selectedPiece');
-   					console.log(queenType);
+   					console.log(gralType);
    				} else {
    					alert("Ya seleccionaste un tipo de General");
    				}
    				break;
-   			case "bishop":
-   				if (bishopType == undefined) {
-   					bishopType = selected.dataset.type;
-   					bishopAttack = selected.dataset.attack;
+   			case "spy":
+   				if (spyType == undefined) {
+   					spyType = selected.dataset.type;
+   					spyAttack = selected.dataset.attack;
    					$(selected).attr('src', 'img/pieces/o' + selected.dataset.piece + '.png');
    					$(selected).addClass('selectedPiece');
-   					console.log(bishopType);
+   					console.log(spyType);
    				} else {
    					alert("Ya seleccionaste un tipo de Espía");
    				}
    				break;
-   			case "horse":
-   				if (horseType == undefined) {
-   					horseType = selected.dataset.type;
-   					horseAttack = selected.dataset.attack;
+   			case "mage":
+   				if (mageType == undefined) {
+   					mageType = selected.dataset.type;
+   					mageAttack = selected.dataset.attack;
    					$(selected).attr('src', 'img/pieces/o' + selected.dataset.piece + '.png');
    					$(selected).addClass('selectedPiece');
-   					console.log(horseType);
+   					console.log(mageType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Caballero");
+   					alert("Ya seleccionaste un tipo de Mago");
    				}
    				break;
-   			case "tower":
-   				if (towerType == undefined) {
-   					towerType = selected.dataset.type;
-   					towerAttack = selected.dataset.attack;
+   			case "champion":
+   				if (championType == undefined) {
+   					championType = selected.dataset.type;
+   					championAttack = selected.dataset.attack;
    					$(selected).attr('src', 'img/pieces/o' + selected.dataset.piece + '.png');
    					$(selected).addClass('selectedPiece');
-   					console.log(towerType);
+   					console.log(championType);
    				} else {
    					alert("Ya seleccionaste un tipo de Campeón");
    				}
@@ -227,15 +227,15 @@ function choosePieces(){
 		'id': 'selectionDone',
 		'type': 'button',
 		'class': 'button',
-		'text': "¡Todo listo!"
+		'text': "Elegir suplentes"
 	}).appendTo('#container')
 
 	$('#selectionDone').on('click', function(){
 		if (kingType == undefined ||
-			queenType == undefined ||
-			bishopType == undefined ||
-			horseType == undefined ||
-			towerType == undefined ||
+			gralType == undefined ||
+			spyType == undefined ||
+			mageType == undefined ||
+			championType == undefined ||
 			pawnType == undefined){
 			alert('No seleccionaste todas las piezas');
 		} else {
@@ -243,8 +243,7 @@ function choosePieces(){
 			$('.classOption').fadeOut('slow');
 			$('.pieceType').fadeOut('slow');
 			$('#selectionDone').fadeOut('slow', function(){
-				drawBoard();
-				playGame();
+				chooseBenchPieces();
 			});
 		}
 		

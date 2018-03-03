@@ -1,5 +1,6 @@
 	function attackingEnemy(enemyPiece, savedPiece){
-   	if (savedPiece.dataset.type == 'magic') {
+   	if (savedPiece.dataset.type == 'magic' || 
+         savedPiece.dataset.type == 'magicBench') {
          var attackZone = '.availiableAttack';
          if ($(attackZone).length > 0) {
             console.log('Atacando!');
@@ -66,6 +67,7 @@
 
 
                if (enemy.dataset.life <= 0) {
+                  capturingPiece(enemyPiece);
                   $(enemyPiece[0]).empty();
                }
             }

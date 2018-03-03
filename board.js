@@ -5,6 +5,27 @@ function drawBoard(){
 		'class': 'clock'
 	}).appendTo('#container');
 	$('<div/>', {
+		'id': 'minutes'
+	}).appendTo('#time');
+	$('<span/>', {
+		'id': 'minuteSpan',
+		'class': 'minutes'
+	}).appendTo('#minutes');
+	
+	$('<div/>', {
+		'id': 'seconds'
+	}).appendTo('#time');
+	$('<span/>', {
+		'id': 'colon',
+		'class': 'colon',
+		'text': ':'
+	}).appendTo('#seconds');
+	$('<span/>', {
+		'id': 'secondSpan',
+		'class': 'seconds'
+	}).appendTo('#seconds');
+	
+	$('<div/>', {
 		'id': 'score',
 		'class': 'scoreCard'
 	}).appendTo('#container');
@@ -32,21 +53,26 @@ function drawBoard(){
 		}
 	}
 
-	var hidden = ['#squareX1Y1',
+	var prison = ['#squareX1Y1',
 					'#squareX2Y1',
-					'#squareX4Y1',
-					'#squareX5Y1',
 					'#squareX1Y2',
-					'#squareX5Y2',
-					'#squareX1Y13',
 					'#squareX5Y13',
-					'#squareX1Y14',
-					'#squareX2Y14',
 					'#squareX4Y14',
 					'#squareX5Y14']
 
-	for(i=0; i < hidden.length; i++) {
-		$(hidden[i]).addClass('hidden');
+	for(i=0; i < prison.length; i++) {
+		$(prison[i]).addClass('prison');
+	}
+
+	var bench = ['#squareX4Y1',
+					'#squareX5Y1',
+					'#squareX5Y2',
+					'#squareX1Y13',
+					'#squareX1Y14',
+					'#squareX2Y14']
+
+	for(i=0; i < bench.length; i++) {
+		$(bench[i]).addClass('bench');
 	}
 
 	var red = ['#squareX3Y1',
@@ -127,119 +153,5 @@ function drawBoard(){
 		$(blue[i]).addClass('blue');
 	}
 
-	var pieces = [{"id": "oking",
-							"url": "img/pieces/oking.png",
-							"class": "piece",
-							"life": 60,
-							"attack": "",
-							"type": ""},
-							{"id": "oqueen",
-							"url": "img/pieces/oqueen.png",
-							"class": "piece",
-							"life": 50,
-							"attack": "",
-							"type": ""},
-							{"id": "ohorse",
-							"url": "img/pieces/ohorse.png",
-							"class": "piece",
-							"life": 30,
-							"attack": "",
-							"type": ""},
-							{"id": "opawn",
-							"url": "img/pieces/opawn.png",
-							"class": "piece",
-							"life": 15,
-							"attack": "",
-							"type": ""},
-							{"id": "obishop",
-							"url": "img/pieces/obishop.png",
-							"class": "piece",
-							"life": 20,
-							"attack": "",
-							"type": ""},
-							{"id": "otower",
-							"url": "img/pieces/otower.png",
-							"class": "piece",
-							"life": 40,
-							"attack": "",
-							"type": ""},
-							{"id": "pking",
-							"url": "img/pieces/pking.png",
-							"class": "piece",
-							"life": 60,
-							"attack": kingAttack,
-							"type": kingType},
-							{"id": "pqueen",
-							"url": "img/pieces/pqueen.png",
-							"class": "piece",
-							"life": 50,
-							"attack": queenAttack,
-							"type": queenType},
-							{"id": "phorse",
-							"url": "img/pieces/phorse.png",
-							"class": "piece",
-							"life": 30,
-							"attack": horseAttack,
-							"type": horseType},
-							{"id": "ppawn",
-							"url": "img/pieces/ppawn.png",
-							"class": "piece",
-							"life": 15,
-							"attack": pawnAttack,
-							"type": pawnType},
-							{"id": "pbishop",
-							"url": "img/pieces/pbishop.png",
-							"class": "piece",
-							"life": 20,
-							"attack": bishopAttack,
-							"type": bishopType},
-							{"id": "ptower",
-							"url": "img/pieces/ptower.png",
-							"class": "piece",
-							"life": 40,
-							"attack": towerAttack,
-							"type": towerType}]
-
-	var initialPositions = ['#squareX3Y1',
-							'#squareX3Y3',
-							'#squareX5Y3',
-							'#squareX1Y3',
-							'#squareX2Y2',
-							'#squareX4Y2',
-							'#squareX3Y14',
-							'#squareX3Y12',
-							'#squareX1Y12',
-							'#squareX5Y12',
-							'#squareX4Y13',
-							'#squareX2Y13']
-
-
-	for(i=0; i < pieces.length; i++) {
-		$('<div/>', {
-		'id': pieces[i].id,
-		'class': pieces[i].class,
-		'data-piece': pieces[i].id,
-		'data-life': pieces[i].life,
-		'data-attack': pieces[i].attack,
-		'data-damage': pieces[i].life,
-		'data-type': pieces[i].type
-		}).appendTo(initialPositions[i]);
-		$('<img/>', {
-			'id': pieces[i].id + 'img',
-			'src': pieces[i].url,
-			'class': 'pieceimg'
-		}).appendTo($('#'+ pieces[i].id));
-	}
-
-	for(i=0; i < 14;i++){
-		for(j=0; j < 5; j++) {
-			var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
-			if ($(id).children()[0] != undefined){
-   					$('<div/>', {
-					'id': "lifebar" + $(id).children()[0].dataset.piece,
-					'class': 'lifebar'
-					}).appendTo($(id).children()[0]);
-			}
-		}
-	}
+	
 };

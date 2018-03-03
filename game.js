@@ -21,10 +21,10 @@ function playGame(){
    			if ( $(selected).children().length == 0 ) {
    				alert('Seleccioná una pieza');
    			} else if ($(selected).children()[0].dataset.piece == "opawn" ||
-   						$(selected).children()[0].dataset.piece == "ohorse" ||
-   						$(selected).children()[0].dataset.piece == "otower" ||
-   						$(selected).children()[0].dataset.piece == "obishop" ||
-   						$(selected).children()[0].dataset.piece == "oqueen" ||
+   						$(selected).children()[0].dataset.piece == "omage" ||
+   						$(selected).children()[0].dataset.piece == "ochampion" ||
+   						$(selected).children()[0].dataset.piece == "ospy" ||
+   						$(selected).children()[0].dataset.piece == "ogral" ||
    						$(selected).children()[0].dataset.piece == "oking"  ){
    				alert('No puedes seleccionar pieza rival');
    			} else {
@@ -51,10 +51,10 @@ function playGame(){
    			} else {
    				if ($(selected).children()[0] != undefined) {
    					if ($(selected).children()[0].dataset.piece == "opawn" ||
-   						$(selected).children()[0].dataset.piece == "ohorse" ||
-   						$(selected).children()[0].dataset.piece == "otower" ||
-   						$(selected).children()[0].dataset.piece == "obishop" ||
-   						$(selected).children()[0].dataset.piece == "oqueen" ||
+   						$(selected).children()[0].dataset.piece == "omage" ||
+   						$(selected).children()[0].dataset.piece == "ochampion" ||
+   						$(selected).children()[0].dataset.piece == "ospy" ||
+   						$(selected).children()[0].dataset.piece == "ogral" ||
    						$(selected).children()[0].dataset.piece == "oking"  ){
    						//alert('Atacando!');
    						attackingEnemy($(selected), savedPiece);
