@@ -148,7 +148,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(kingType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Rey");
+   					kingType = undefined;
+   					kingAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(kingType);
    				}
    				break;
    			case "gral":
@@ -159,7 +163,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(gralType);
    				} else {
-   					alert("Ya seleccionaste un tipo de General");
+   					gralType = undefined;
+   					gralAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(gralType);
    				}
    				break;
    			case "spy":
@@ -170,7 +178,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(spyType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Espía");
+   					spyType = undefined;
+   					spyAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(spyType);
    				}
    				break;
    			case "mage":
@@ -181,7 +193,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(mageType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Mago");
+   					mageType = undefined;
+   					mageAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(mageType);
    				}
    				break;
    			case "champion":
@@ -192,7 +208,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(championType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Campeón");
+   					championType = undefined;
+   					championAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(championType);
    				}
    				break;
    			case "pawn":
@@ -203,7 +223,11 @@ function choosePieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(pawnType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Escudero");
+   					pawnType = undefined;
+   					pawnAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(pawnType);
    				}
    				break;
    			default:

@@ -3,7 +3,7 @@
             var y = savedSquare.dataset.y;
 
             switch(savedPiece.dataset.piece) {
-               case "ppawn": 
+               case "pawn": 
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -17,7 +17,7 @@
                   var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
                   var availiableMove8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 1);
                   break;
-               case "pchampion":
+               case "champion":
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -27,7 +27,7 @@
                   var availiableMove5 = "#squareX" + (x * 1 + 1) + "Y" + y;
                   var availiableMove10 = "#squareX" + (x * 1 + 2) + "Y" + y;
                   break;
-               case "pspy":
+               case "spy":
                   var availiableMove1 = "#squareX" + (x - 1) + "Y" + (y - 1);
                   var availiableMove3 = "#squareX" + (x * 1 + 1) + "Y" + (y - 1);
                   var availiableMove6 = "#squareX" + (x - 1) + "Y" + (y * 1 + 1);
@@ -37,7 +37,7 @@
                   var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
                   var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
                   break;
-               case "pmage":
+               case "mage":
                   var availiableMove2 = "#squareX" + (x - 1) + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
                   var availiableMove4 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
@@ -47,7 +47,7 @@
                   var availiableMove6 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
                   var availiableMove8 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 1);
                   break;
-               case "pgral":
+               case "gral":
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove9 = "#squareX" + x + "Y" + (y - 2);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
@@ -65,7 +65,7 @@
                   var availiableMove15 = "#squareX" + (x - 2) + "Y" + (y * 1 + 2);
                   var availiableMove14 = "#squareX" + (x * 1 + 2) + "Y" + (y * 1 + 2);
                   break;
-               case "pking":
+               case "king":
                   var availiableMove2 = "#squareX" + x + "Y" + (y - 1);
                   var availiableMove7 = "#squareX" + x + "Y" + (y * 1 + 1);
                   var availiableMove4 = "#squareX" + (x - 1) + "Y" + y;
@@ -96,6 +96,27 @@
             $(availiableMove15).addClass('availiableMove');
             $(availiableMove16).addClass('availiableMove');
 
+            if ($(savedSquare).hasClass('bench')){
+               switch(savedPiece.dataset.side){
+                  case "orange":
+                     for(i=0; i < 6;i++){
+                        for(j=0; j < 5; j++) {
+                           var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
+                           $(id).addClass('availiableMove');
+                        }
+                     }
+                  break;
+                  case "purple":
+                     for(i=7; i < 14;i++){
+                        for(j=0; j < 5; j++) {
+                           var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
+                           $(id).addClass('availiableMove');
+                        }
+                     }
+                  break;
+               }
+            }
+
             for(i=0; i < 14;i++){
                for(j=0; j < 5; j++) {
                   var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
@@ -107,7 +128,7 @@
             }
 
             switch(savedPiece.dataset.piece) {
-               case "ppawn": 
+               case "pawn": 
                   switch(savedPiece.dataset.type) {
                      case "melee":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
@@ -143,7 +164,7 @@
                         console.log("error");     
                   }
                   break;
-               case "pchampion":
+               case "champion":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                      case "meleeBench":
@@ -174,7 +195,7 @@
                         console.log("error");
                   }
                   break;
-               case "pspy":
+               case "spy":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                      case "meleeBench":
@@ -205,7 +226,7 @@
                         console.log("error");
                   }     
                   break;           
-               case "pmage":
+               case "mage":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                      case "meleeBench":
@@ -231,10 +252,10 @@
                         var availiableAttack2 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
                         var availiableAttack3 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
                         var availiableAttack4 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack5 = "#squareX" + (x - 1) + "Y" + (y - 2);
-                        var availiableAttack6 = "#squareX" + (x * 1 + 1) + "Y" + (y - 2);
-                        var availiableAttack7 = "#squareX" + (x - 1) + "Y" + (y * 1 + 2);
-                        var availiableAttack8 = "#squareX" + (x * 1 + 1) + "Y" + (y * 1 + 2);
+                        var availiableAttack5 = "#squareX" + x + "Y" + (y - 1);
+                        var availiableAttack6 = "#squareX" + x + "Y" + (y * 1 + 1);
+                        var availiableAttack7 = "#squareX" + (x - 1) + "Y" + y;
+                        var availiableAttack8 = "#squareX" + (x * 1 + 1) + "Y" + y;
                         var availiableAttack9 = "#squareX" + (x - 2) + "Y" + (y - 1);
                         var availiableAttack10 = "#squareX" + (x * 1 + 2) + "Y" + (y - 1);
                         var availiableAttack11 = "#squareX" + (x - 2) + "Y" + (y * 1 + 1);
@@ -244,7 +265,7 @@
                         console.log("error");
                   }
                   break;
-               case "pgral":
+               case "gral":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
@@ -288,7 +309,7 @@
                         console.log("error");
                   }
                   break;               
-               case "pking":
+               case "king":
                   switch(savedPiece.dataset.type) {
                      case "melee":
                         var availiableAttack2 = "#squareX" + x + "Y" + (y - 1);
@@ -356,17 +377,47 @@
             for(i=0; i < 14;i++){
                for(j=0; j < 5; j++) {
                   var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
-                  if ($(id).children()[0] == undefined  || 
-                     $(id).children()[0].dataset.piece == "ppawn" ||
-                     $(id).children()[0].dataset.piece == "pmage" ||
-                     $(id).children()[0].dataset.piece == "pchampion" ||
-                     $(id).children()[0].dataset.piece == "pspy" ||
-                     $(id).children()[0].dataset.piece == "pgral" ||
-                     $(id).children()[0].dataset.piece == "pking" ||
-                     $(id).hasClass('bench') || 
-                     $(id).hasClass('prison')){
-                     $(id).removeClass('availiableAttack');
+                  switch($(savedPiece)[0].dataset.side){
+                     case "orange":
+                        if ($(id).children()[0] == undefined  || 
+                        $(id).children()[0].dataset.piece == "pawn" &&
+                        $(id).children()[0].dataset.side == "orange" ||
+                        $(id).children()[0].dataset.piece == "mage" &&
+                        $(id).children()[0].dataset.side == "orange" ||
+                        $(id).children()[0].dataset.piece == "champion" &&
+                        $(id).children()[0].dataset.side == "orange" ||
+                        $(id).children()[0].dataset.piece == "spy" &&
+                        $(id).children()[0].dataset.side == "orange" ||
+                        $(id).children()[0].dataset.piece == "gral" &&
+                        $(id).children()[0].dataset.side == "orange" ||
+                        $(id).children()[0].dataset.piece == "king" &&
+                        $(id).children()[0].dataset.side == "orange"||
+                        $(id).hasClass('bench') || 
+                        $(id).hasClass('prison')){
+                           $(id).removeClass('availiableAttack');
+                        }
+                     break;
+                     case "purple":
+                        if ($(id).children()[0] == undefined  || 
+                        $(id).children()[0].dataset.piece == "pawn" &&
+                        $(id).children()[0].dataset.side == "purple" ||
+                        $(id).children()[0].dataset.piece == "mage" &&
+                        $(id).children()[0].dataset.side == "purple"||
+                        $(id).children()[0].dataset.piece == "champion" &&
+                        $(id).children()[0].dataset.side == "purple" ||
+                        $(id).children()[0].dataset.piece == "spy" &&
+                        $(id).children()[0].dataset.side == "purple" ||
+                        $(id).children()[0].dataset.piece == "gral" &&
+                        $(id).children()[0].dataset.side == "purple" ||
+                        $(id).children()[0].dataset.piece == "king" &&
+                        $(id).children()[0].dataset.side == "purple" ||
+                        $(id).hasClass('bench') || 
+                        $(id).hasClass('prison')){
+                           $(id).removeClass('availiableAttack');
+                        }
+                     break;
                   }
+                  
                }
             }
 

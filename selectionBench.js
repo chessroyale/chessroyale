@@ -106,7 +106,11 @@ function chooseBenchPieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(spyBenchType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Espía");
+   					spyBenchType = undefined;
+   					spyBenchAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(spyBenchType);
    				}
    				break;
    			case "mage":
@@ -117,7 +121,11 @@ function chooseBenchPieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(mageBenchType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Mago");
+   					mageBenchType = undefined;
+   					mageBenchAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(mageBenchType);
    				}
    				break;
    			case "champion":
@@ -128,7 +136,11 @@ function chooseBenchPieces(){
    					$(selected).addClass('selectedPiece');
    					console.log(championBenchType);
    				} else {
-   					alert("Ya seleccionaste un tipo de Campeón");
+   					championBenchType = undefined;
+   					championBenchAttack = undefined;
+   					$(selected).attr('src', 'img/pieces/p' + selected.dataset.piece + '.png');
+   					$(selected).removeClass('selectedPiece');
+   					console.log(championBenchType);
    				}
    				break;
    			default:
@@ -165,8 +177,8 @@ function chooseBenchPieces(){
 			$('.classOption').fadeOut('slow');
 			$('.pieceType').fadeOut('slow');
 			$('#benchSelectionDone').fadeOut('slow', function(){
-				drawBoard();
 				countdown();
+				drawBoard();
 			});
 		}
 		
