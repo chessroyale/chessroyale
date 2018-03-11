@@ -55,7 +55,7 @@ function countdown(){
 						  	$('.seconds').html((' : 0' + t.seconds).slice(-2));
 					  		if (t.total < 0) {
 						    	clearInterval(timeinterval);
-						    	alert("Time's up!");
+						    	endGame();
 						  	}
 						}
 

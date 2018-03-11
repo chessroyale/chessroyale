@@ -12,6 +12,7 @@ function capturingPiece(enemyPiece){
 				$(prisoner).removeClass('active');
 				$(prisoner).addClass('prisoner');
 				$(prisoner).appendTo(cellOne);
+				capturedTime(prisoner);
 				countPieces();
 			} else {
 				if ($(cellTwo).children().length == 0) {
@@ -20,6 +21,7 @@ function capturingPiece(enemyPiece){
 					$(prisoner).removeClass('active');
 					$(prisoner).addClass('prisoner');
 					$(prisoner).appendTo(cellOne);
+					capturedTime(prisoner);
 					countPieces();
 				} else {
 					if ($(cellThree).children().length == 0) {
@@ -30,6 +32,7 @@ function capturingPiece(enemyPiece){
 						$(prisoner).removeClass('active');
 						$(prisoner).addClass('prisoner');
 						$(prisoner).appendTo(cellOne);
+						capturedTime(prisoner);
 						countPieces();
 					} else {
 						var firstPrisoner = $(cellThree).children()[0];
@@ -41,6 +44,7 @@ function capturingPiece(enemyPiece){
 						$(prisoner).removeClass('active');
 						$(prisoner).addClass('prisoner');
 						$(prisoner).appendTo(cellOne);
+						capturedTime(prisoner);
 						collectRansom(firstPrisoner);
 					}
 				}
@@ -55,6 +59,7 @@ function capturingPiece(enemyPiece){
 				$(prisoner).removeClass('active');
 				$(prisoner).addClass('prisoner');
 				$(prisoner).appendTo(cellOne);
+				capturedTime(prisoner);
 				countPieces();
 			} else {
 				if ($(cellTwo).children().length == 0) {
@@ -63,6 +68,7 @@ function capturingPiece(enemyPiece){
 					$(prisoner).removeClass('active');
 					$(prisoner).addClass('prisoner');
 					$(prisoner).appendTo(cellOne);
+					capturedTime(prisoner);
 					countPieces();
 				} else {
 					if ($(cellThree).children().length == 0) {
@@ -73,6 +79,7 @@ function capturingPiece(enemyPiece){
 						$(prisoner).removeClass('active');
 						$(prisoner).addClass('prisoner');
 						$(prisoner).appendTo(cellOne);
+						capturedTime(prisoner);
 						countPieces();
 					} else {
 						var firstPrisoner = $(cellThree).children()[0];
@@ -84,6 +91,7 @@ function capturingPiece(enemyPiece){
 						$(prisoner).removeClass('active');
 						$(prisoner).addClass('prisoner');
 						$(prisoner).appendTo(cellOne);
+						capturedTime(prisoner);
 						collectRansom(firstPrisoner);						
 					}
 				}

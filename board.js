@@ -26,9 +26,42 @@ function drawBoard(){
 	}).appendTo('#seconds');
 	
 	$('<div/>', {
-		'id': 'score',
+		'id': 'orangeScore',
 		'class': 'scoreCard'
 	}).appendTo('#container');
+	$('<div/>', {
+		'id': 'orangeGold'
+	}).appendTo('#orangeScore');
+	$('<img/>',{
+		'id': 'orangeCoin',
+		'class': 'coin',
+		'src': 'img/coin.png'
+	}).appendTo('#orangeGold');
+	$('<span/>', {
+		'id': 'orangeGoldValue',
+		'class': 'coins',
+		'data-score': 0
+	}).appendTo('#orangeGold');
+
+	$('<div/>', {
+		'id': 'purpleScore',
+		'class': 'scoreCard',
+	}).appendTo('#container');
+	$('<div/>', {
+		'id': 'purpleGold'
+	}).appendTo('#purpleScore');
+	$('<img/>',{
+		'id': 'purpleCoin',
+		'class': 'coin',
+		'src': 'img/coin.png',
+	}).appendTo('#purpleGold');
+	$('<span/>', {
+		'id': 'purpleGoldValue',
+		'class': 'coins',
+		'data-score': 0
+	}).appendTo('#purpleGold');
+
+
 	$('<div/>', {
 		'id': 'board'
 	}).appendTo('#container');

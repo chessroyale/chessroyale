@@ -99,7 +99,7 @@
             if ($(savedSquare).hasClass('bench')){
                switch(savedPiece.dataset.side){
                   case "orange":
-                     for(i=0; i < 6;i++){
+                     for(i=0; i < 7;i++){
                         for(j=0; j < 5; j++) {
                            var id = '#squareX' + (j + 1) + 'Y' + (i + 1);
                            $(id).addClass('availiableMove');

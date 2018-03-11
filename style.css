@@ -133,22 +133,22 @@
 
 .red {
 	background-image: url("img/squares/redsquare.jpg");
-	border: 0.5px solid #cc0000;
+	border: 0.5px dashed #cc0000;
 }
 
 .yellow {
 	background-image: url("img/squares/yellowsquare.jpg");
-	border: 0.5px solid #cc9900;
+	border: 0.5px dashed #cc9900;
 }
 
 .green {
 	background-image: url("img/squares/greensquare.jpg");
-	border: 0.5px solid green;
+	border: 0.5px dashed green;
 }
 
 .blue {
 	background-image: url("img/squares/bluesquare.jpg");
-	border: 0.5px solid mediumblue;
+	border: 0.5px dashed mediumblue;
 }
 
 .prison {
@@ -164,7 +164,7 @@
 	width: 160px;
 	margin-top: 10px;
 	position: absolute;
-	background-color: #776853;
+	background-color: /*#776853*/dodgerblue;
 	box-shadow: 
 			0 12px 2px rgba(0,0,0,.1),
             0 0 10px rgba(0,0,0,.1),
@@ -173,13 +173,14 @@
             0 10px 20px rgba(0,0,0,.25),
             0 20px 20px rgba(0,0,0,.2),
             0 40px 40px rgba(0,0,0,.15);
+    transition: height 1.5s, width 1.5s, margin-top 1.5s, margin-left 1.5s, font-size 1.5s, line-height 1.5s;
 }
 
 .clock {
 	margin-left: 10px;
 }
 
-#time{
+#time, .scoreCard {
 	font-family: 'Macondo', cursive;
 	color: #fafafa;
 	display: inline-block;
@@ -206,8 +207,20 @@
 	padding: 15px;
 }
 
-.scoreCard {
-	margin-left: 730px;
+#orangeScore {
+	margin-top: 114.5px;
+	margin-left: 10px;
+	background-color: #F34214;
+}
+
+#purpleScore {
+	margin-top: 220px;
+	margin-left: 10px;
+	background-color: #890FD5;
+}
+
+.coin {
+	margin-top: 30px;
 }
 
 .piece {
@@ -276,4 +289,18 @@
    	z-index: 1000;
    	height: 60px;
    	width: 60px;
+}
+
+.icewall {
+	height: 108px;
+	width: 108px;
+	position: absolute;
+	background-color: dodgerblue;
+}
+
+.firewall {
+	height: 108px;
+	width: 108px;
+	position: absolute;
+	background-color: red;
 }

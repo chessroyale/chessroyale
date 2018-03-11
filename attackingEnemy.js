@@ -1,9 +1,21 @@
 	function attackingEnemy(enemyPiece, savedPiece){
+
+      var burnedPiece = $(enemyPiece).children()[0];
    	if (savedPiece.dataset.type == 'magic' || 
          savedPiece.dataset.type == 'magicBench') {
          var attackZone = '.availiableAttack';
          if ($(attackZone).length > 0) {
             console.log('Atacando!');
+
+            $(burnedPiece).addClass('burned');
+            $('<div/>', {
+               'id': 'firewall',
+               'class': 'firewall'
+            }).appendTo(burnedPiece);
+            $('#firewall').fadeOut("slow", function(){
+               $(burnedPiece).removeClass('burned');
+               $('.piece .firewall').remove();
+            });
 
             for (i = 0; i < $('.availiableAttack').length; i++) {
                var enemy = $('.availiableAttack')[i].children[0];
@@ -41,6 +53,16 @@
          if (enemyPiece.hasClass('availiableAttack')) {
                console.log('Atacando!');
 
+               $(burnedPiece).addClass('burned');
+               $('<div/>', {
+                  'id': 'firewall',
+                  'class': 'firewall'
+               }).appendTo(burnedPiece);
+               $('#firewall').fadeOut("slow", function(){
+                  $(burnedPiece).removeClass('burned');
+                  $('.piece .firewall').remove();
+               });
+
                var enemy = enemyPiece[0].children[0];
 
                var life = enemy.dataset.life;
@@ -71,6 +93,8 @@
                   $(enemyPiece[0]).empty();
                }
             }
-      }		
+      }
+
+      cooldown(savedPiece, 1500);		
             
    };
